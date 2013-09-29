@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Twitter for Cats</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		
+	<style>
+	body
+	{ 
+	background-image:url('http://i468.photobucket.com/albums/rr48/sugarspiceplum/cat-dance.gif');
+	background-repeat:no-repeat;
+	background-position:left bottom;
+}
+</style>
+
+  </head>
+  <body>
+	<div id="container">
+		<div id="badge">
+			<div id="badge-icon"><center><img src="static/cat4.jpg" height="200px" width="200px" /></div>
+				<div id="badge-title">Meow!</div>
+				
+				<div id="badge-description"><strong>For when yours cats really need to meow</strong></div>
+	<div id="heading">Twitter for Cats</div>
+    <div id="forms"><form action='/api/cheep' method='POST'>
+      Name:
+      <input name="name" type="text" /> 
+      Meow:
+      <input name="cheep" type="text" maxlength="76" /> 
+      <input type="submit" />
+    </form></div>
+	
+	<! -- Meows --> 
+<!--<div style="max-height:125px; overflow-y:auto; padding-top:20px" id="feed" >
+
+      
+        {% for cheep in cheeps %}
+        <div class="cheep">
+            <b>{{ cheep[0] }}</b>
+            <p>{{ cheep[2] }}</p>
+			
+        </div>
+        {% endfor %}
+    </div>--> 
+	<script type="text/javascript">window.setTimeout(function() { var elem = document.getElementById('style-6'); elem.scrollTop = elem.scrollHeight; }, 100)</script>
+
+ <div class="scrollbar" id="style-6">
+      <div class="force-overflow">  
+        {% for cheep in cheeps %}
+        <div class="cheep">
+            <b>{{ cheep[0] }}</b>
+            <p>{{ cheep[2] }}</p>
+			
+        </div>
+        {% endfor %}
+    </div></div>
+    </div>
+	
+	</div>
+	</div>
+  </body>
+</html>
